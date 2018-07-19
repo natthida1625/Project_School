@@ -1,0 +1,209 @@
+body {
+    margin: 0;  
+}
+
+.container-width {
+    width: 960px;
+    margin: 0 auto;
+    display: flow-root;
+}
+.background-header {
+    background: #1d1d1d url('../image/pattern.png') repeat;
+    border-bottom: 2px solid #E7746F;
+    height: 177px;
+    .header-container {
+        height: 177px;
+    }
+    .text-header {
+        color: #fff;
+        font: 40px 'century gothic', arial;
+        margin-bottom: 0;      
+        letter-spacing: 0.1em;  
+        .text-header-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 300;
+            span {
+                color: #E7746F;
+            }
+            span:hover {
+                color: #fff;
+            }
+        }        
+    }
+    .text-section {
+        margin-bottom: 0;
+        margin-top: 6px;
+        color: #fff;
+        font: 15px 'century gothic', arial;
+        font-weight: 300;
+    }
+    .nav {
+        margin-top: 25px;
+        .nav-menu {
+            list-style-type: none;
+            display: inline-flex;
+            float: right;
+            .active {
+                background-color: #E7746F;
+                padding: 8px 30px 8px 30px;
+            }
+            li a {
+                margin-right: 1em;
+                padding: 8px 30px 8px 30px;
+                text-decoration: none;
+                color: #fff;
+                font: 12px 'century gothic', arial;
+            }
+            li a:hover {
+                background-color: #E7746F;
+            }
+        }        
+    }
+}
+
+.banner {
+    margin-top: 11px;
+    margin-bottom: 14px;
+    img {
+        width: 100%;
+        border: 5px solid #E7746F; 
+    }
+}
+
+.section-left {
+    float: left;
+    width: 70% ;
+    font: 12px arial;
+    line-height: 1.7em;
+    padding: 0 0 0 20px;
+
+    a {
+        margin-right: 0;        
+        color: #009FBC;
+        font-size: 14px;
+    }                                    
+    a:hover {
+        text-decoration: none;
+    }
+    li {
+        list-style-type: none;
+        background: url('../image/bullet.png') no-repeat;
+        margin: 0 0 0 -40px;
+        padding: 0 0 4px 25px;       
+    }
+    
+}
+
+.section-right {
+    float: right;
+    width: 25%;
+    font-size: 14px;
+    a {
+        margin-right: 0;        
+        color: #009FBC;
+        font: arial, sans-serif;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    p {
+        line-height: 1.7em;
+    }
+
+    .box-top {
+        border: solid 1px #ccc;
+        border-radius: 12px;
+        padding: 12px;        
+       
+        p {
+            margin-top: 8px;
+            margin-bottom: 10;        
+        }   
+    }
+        
+    .box-middle {
+        margin-top: 15px;
+        border: solid 1px #ccc;
+        border-radius: 12px;
+        padding: 1em;   
+        li {
+            list-style-type: none;
+            background: url('../image/bullet.png') no-repeat;
+            margin: 0 0 0 -38px;
+            padding: 0 0 6px 25px;       
+        }     
+        
+    }
+
+    .box-footer {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border: solid 1px #ccc;
+        border-radius: 12px;
+        padding: 1em;
+        h4 {
+            margin-top: 0;
+        }
+        .search { 
+            color: #5D5D5D; 
+            border: 1px solid #BBB; 
+            width: 134px; 
+            padding: 4px; 
+            font: 100% arial, sans-serif;
+        }           
+
+    }
+}
+
+.footer-text-align {
+    margin-top: 40px;
+    font: 12px 'trebuchet ms', sans-serif;
+}
+
+.footer-background {
+    background: #1d1d1d url('../image/pattern.png') repeat;
+    border-top: 2px solid #E7746F;
+    height: 145px;
+    .footer-text {
+        text-align: center;
+        color: #fff;
+        a {
+            color: #E7746F;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #fff;
+        }
+    }
+}
+
+h1, h2, h4, h5, h6 { 
+    color: #E7746F;
+    letter-spacing: 0em;
+    padding: 0 0 5px 0;
+    font-weight: 300;    
+}
+
+h4, h5 { 
+     font: normal 120% arial;
+     padding: 5px 0 0 0;
+     margin-top: 15px;
+     margin-bottom: 0;
+}
+
+h5 { 
+    color: #009FBC;
+    padding: 0 0 5px 0;
+    font: normal 110% arial;
+    text-transform: uppercase;  
+}
+
+h6 { 
+   color: #888;
+   font: normal 95% arial;
+   letter-spacing: normal;
+   padding: 0 0 15px 0;
+   margin-top: 0;
+   margin-bottom: 0;
+}

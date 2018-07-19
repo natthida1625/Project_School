@@ -19,6 +19,10 @@ Route::get('/test', function () {
     return view('Test');
 });
 
-Route::get('/page', function () {
+Route::get('/1', function () {
     return view('staticpage');
+});
+
+Route::get('newpage', function () {
+    return view('newpage');
 });
