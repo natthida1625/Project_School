@@ -1,5 +1,41 @@
 body {
   margin: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+  color: #E7746F;
+  letter-spacing: 0em;
+  padding: 0 0 5px 0;
+  font-weight: 300;
+}
+
+h4,
+h5 {
+  font-size: 120%;
+  padding: 5px 0 0 0;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+h5 {
+  color: #009FBC;
+  padding: 0 0 5px 0;
+  font-size: 110%;
+  text-transform: uppercase;
+}
+
+h6 {
+  color: #888;
+  font-size: 95%;
+  letter-spacing: normal;
+  padding: 0 0 15px 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .container-width {
@@ -20,7 +56,7 @@ body {
 
 .background-header .text-header {
   color: #fff;
-  font: 40px 'century gothic', arial;
+  font-size: 40px;
   margin-bottom: 0;
   letter-spacing: 0.1em;
 }
@@ -43,7 +79,7 @@ body {
   margin-bottom: 0;
   margin-top: 6px;
   color: #fff;
-  font: 15px 'century gothic', arial;
+  font-size: 15px;
   font-weight: 300;
 }
 
@@ -69,7 +105,7 @@ body {
   padding: 8px 30px 8px 30px;
   text-decoration: none;
   color: #fff;
-  font: 12px 'century gothic', arial;
+  font-size: 12px;
 }
 
 .background-header .nav .nav-menu li a:hover {
@@ -89,7 +125,7 @@ body {
 .section-left {
   float: left;
   width: 70%;
-  font: 12px arial;
+  font-size: 12px;
   line-height: 1.7em;
   padding: 0 0 0 20px;
 }
@@ -120,7 +156,6 @@ body {
 .section-right a {
   margin-right: 0;
   color: #009FBC;
-  font: arial, sans-serif;
 }
 
 .section-right a:hover {
@@ -173,12 +208,12 @@ body {
   border: 1px solid #BBB;
   width: 134px;
   padding: 4px;
-  font: 100% arial, sans-serif;
+  font-size: 100%;
 }
 
 .footer-text-align {
   margin-top: 40px;
-  font: 12px 'trebuchet ms', sans-serif;
+  font-size: 12px;
 }
 
 .footer-background {
@@ -199,40 +234,5 @@ body {
 
 .footer-background .footer-text a:hover {
   color: #fff;
-}
-
-h1,
-h2,
-h4,
-h5,
-h6 {
-  color: #E7746F;
-  letter-spacing: 0em;
-  padding: 0 0 5px 0;
-  font-weight: 300;
-}
-
-h4,
-h5 {
-  font: normal 120% arial;
-  padding: 5px 0 0 0;
-  margin-top: 15px;
-  margin-bottom: 0;
-}
-
-h5 {
-  color: #009FBC;
-  padding: 0 0 5px 0;
-  font: normal 110% arial;
-  text-transform: uppercase;
-}
-
-h6 {
-  color: #888;
-  font: normal 95% arial;
-  letter-spacing: normal;
-  padding: 0 0 15px 0;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 

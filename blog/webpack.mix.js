@@ -11,7 +11,6 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/test.scss', 'public/css')
-   .sass('resources/assets/sass/stylepage.scss', 'public/css')
+mix.js('resources/assets/js/app.js', 'public/js')   
+   .sass('resources/assets/sass/stylepage.scss', 'public/css')  
    .copy('resources/assets/image', 'public/image')
