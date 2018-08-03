@@ -3,6 +3,10 @@ body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+#spoiler{
+    display: none;
+  }
+
 h1, h2, h4, h5, h6 { 
     color: #E7746F;
     letter-spacing: 0em;
@@ -107,8 +111,16 @@ h6 {
     width: 70% ;
     font-size: 12px;
     line-height: 1.7em;
-    padding: 0 0 0 20px;
-
+    padding: 0 0 0 20px; 
+    
+   
+        #table {
+            text-align: center;                 
+        }
+        
+    .middle {
+        margin-top : 220px;        
+    }
     a {
         margin-right: 0;        
         color: #009FBC;
@@ -125,6 +137,7 @@ h6 {
     }
     
 }
+
 
 .section-right {
     float: right;
@@ -144,7 +157,7 @@ h6 {
     .box-top {
         border: solid 1px #ccc;
         border-radius: 12px;
-        padding: 12px;        
+        padding: 22px;        
        
         p {
             margin-top: 8px;

@@ -22,7 +22,7 @@
                             <a class="active" href="{{ url('/home') }}">Home</a>
                         </li>
                         <li>
-                            <a href="{{ url('/video') }}">Example</a>
+                            <a href="{{ url('/video') }}">Video</a>
                         </li>
                         <li>
                             <a href="#">A Page</a>
@@ -37,57 +37,51 @@
                 </nav>
             </header>
             </div>
-            <section class="container-width">
-                <div class="banner">
-                    <img src="{{ asset('image/banner.jpg') }}" alt="test">
-                </div>
-            <div class="section-left">
-            <h2>Create Videos</h2>
-            <form action="#" onsubmit="return create() ">
-                    <div class="form_settings">
-                       <p>Title: <input class"name" type="text" id="title" name="name" value="" /></p>                        
-                       <p>Detail: <textarea rows="8" cols="50" id="detail" name="detail"></textarea></p>                 
-                       <p>Type Video:                       
-                       <input class="radio" type="radio" id="shortclip" name="type" value="คลิปสั้น" checked > คลิปสั้น
-                       <input class="radio" type="radio" id="longclip" name="type" value="คลิปยาว"> คลิปยาว <br /><br />                                              
-                       <input type="submit" value="Submit"  id="namebutton"></p>
-                    </div>       
-                </div>                            
-             </form>   
             
-                <div class="section-right">
-                    <div class="box-top">
-                        <h4>Latest News</h4>
-                        <h5>New Website Launched</h5>
-                        <h6>June 1st, 2014</h6>
-                        <p>2014 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
-                    </div>
-                    <div class="box-middle">
-                        <h4>Useful Links</h4>
-                        <ul>
-                          <li><a href="#">link 1</a></li>
-                          <li><a href="#">link 2</a></li>
-                          <li><a href="#">link 3</a></li>
-                          <li><a href="#">link 4</a></li>
-                        </ul>
-                    </div>
-                    <div class="box-footer">
-                        <h4>Search</h4>
-                        <form method="" action="#" id="search_form">
-                         <p>
-                           <input class="search" type="text" name="search_field" value="Enter keywords....." />
-                           <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="image/search.png" alt="Search" title="Search" />
-                         </p>
-                        </form>
-                    </div>
-                </div>
+            <section class="container-width">
+            <div class="banner">
+                <img src="{{ asset('image/banner.jpg') }}" alt="test">
+            </div>
+
+            <div class="section-left">
+                <h2>Videos</h2>
+                    <a href="{{ url('/createvideo') }}">Create Video</a><br /><br />                
+                    <table align="left" cellspacing=2 cellpadding=5 id="table" border=1 width="70%" >      
+                        <tr>
+                            <th>Title</th>
+                            <th>Detail</th>
+                            <th>Type Video</th> 
+                            <th>Edit</th>  
+                            <th>Delete</th>                                              
+                        </tr>             
+                    </table>                                      
+            </div>
+
+            <div class="section-right">
+                <div class="box-top">
+                <h3>Edit Videos</h3> 
+                <form action="#" onsubmit="return edit() ">
+                    <table>
+                    <p>Title: <br /> <input class"name" type="text" id="title" name="title" /></p>                        
+                    <p>Detail: <textarea rows="8" cols="20" id="detail" name="detail"></textarea></p>                 
+                    <p>Type Video: <br />                      
+                    <input class="radio" type="radio" id="type_1" name="type" value="คลิปสั้น"> คลิปสั้น <br />
+                    <input class="radio" type="radio" id="type_2" name="type" value="คลิปยาว"> คลิปยาว <br /><br />                                              
+                    <input type="submit" value="Save" >
+                    <input type="reset" value="Cancel" />
+                    </p>                   
+                    </table>
+                </div>  
+                </form>       
+            </div>
             </section>
+
             <footer class="footer-background">
                 <div class="container-width footer-text-align">
                     <p class="footer-text">
                         <a href="{{ url('/home') }}">Home</a>
                         |
-                        <a href="{{ url('/video') }}#">Examples</a>
+                        <a href="{{ url('/video') }}#">Video</a>
                         |
                         <a href="#">A Page</a>
                         |
@@ -106,24 +100,76 @@
                 </div>
             </footer>
 
-             <script>
-             function create() {                    
-                var title = document.getElementById("title").value;
-                var detail = document.getElementById("detail").value;
-                var type = document.getElementsByName("type");
-                var type_text = ''
-                for (var i = 0, length = type.length; i < length; i++) {
-                    if (type[i].checked) {
-                        type_text = type[i].value;
-                        break;
-                    }
+            <script>                                
+                var videos = [["Title 1","Detail 1","คลิปสั้น"],
+                            ["Title 2","Detail 2","คลิปยาว"],
+                            ["Title 3","Detail 3","คลิปสั้น"],
+                            ["Title 4","Detail 4","คลิปยาว"],
+                            ["Title 5","Detail 5","คลิปสั้น"]]                       
+                table = document.getElementById("table"); 
+                for(var i = 0; i < videos.length; i++)
+                {
+                    var newRow = table.insertRow(table.length);
+                    newRow.id = "video_" + i;
+                    for(var j = 0; j < videos[i].length; j++)
+                {
+                    var cell = newRow.insertCell(j);                   
+                    cell.innerHTML = videos[i][j];
                 }
-                alert("Title : " + title + "\nDetail : " + detail + "\ntype : " + type_text  );
+                    var cell = newRow.insertCell();
+                    var buttonEdit = document.createElement("button");
+                        buttonEdit.setAttribute("id", "btn_" +i);
+                        buttonEdit.setAttribute("class", "btn_edit_class");
+                        buttonEdit.setAttribute("value", i);
+                        buttonEdit.innerHTML = "Edit";
+                        cell.appendChild(buttonEdit);
+                    
+                    var cell = newRow.insertCell();
+                    var buttonDelete = document.createElement("button");
+                    buttonDelete.setAttribute("id", "btn_del_" +i);
+                    buttonDelete.setAttribute("class", "btn_del_class");
+                    buttonDelete.setAttribute("value", i);
+                    buttonDelete.innerHTML = "Delete";
+                    cell.appendChild(buttonDelete);
+                }
+                //Edit
+                var number = 0
+                var items = document.getElementsByClassName("btn_edit_class");
+                Array.prototype.forEach.call(items, function(i) {
+                    document.getElementById('btn_'+i.value).onclick = function() {
+                        document.getElementById('title').value = videos[i.value][0];
+                        document.getElementById('detail').innerHTML = videos[i.value][1];
+                        if (videos[i.value][2]== "คลิปสั้น") {
+                            number = 1
+                        } else if(videos[i.value][2]== "คลิปยาว"){
+                            number = 2
+                        }
+                        document.getElementById("type_" + number).checked = true;
+                    }; 
+                });
+                // Delete
+                var items = document.getElementsByClassName("btn_del_class");
+                Array.prototype.forEach.call(items, function(i) {
+                    document.getElementById('btn_del_'+i.value).onclick = function() {
+                        if (confirm(" ต้องการลบข้อมูลหรือไหม? ")) {
+                            document.getElementById("video_" + i.value).style.display = 'none';
+                        }
+                    }; 
+                });
 
-                //document.getElementById("namebutton").addEventListener("click", function () {
-                //})
-             }                
-               
-             </script>         
+                function edit() {                    
+                    var title = document.getElementById("title").value;
+                    var detail = document.getElementById("detail").value;
+                    var type = document.getElementsByName("type");
+                    var type_text = ''
+                    for (var i = 0, length = type.length; i < length; i++) {
+                        if (type[i].checked) {
+                            type_text = type[i].value;
+                            break;
+                        }
+                    }
+                    alert("Title : " + title + "\nDetail : " + detail + "\nType video : " + type_text  );                
+                }         
+            </script>         
     </body>
 </html>

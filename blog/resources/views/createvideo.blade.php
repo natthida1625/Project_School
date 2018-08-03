@@ -1,10 +1,11 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
     <head>
         <title>
            textured_orbs
         </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ asset('css/stylepage.css') }}">
         <link rel="icon" type="image/png" href="{{ asset('image/logo.png') }}" /> 
     </head>
@@ -21,7 +22,7 @@
                             <a class="active" href="{{ url('/home') }}">Home</a>
                         </li>
                         <li>
-                            <a href="{{ url('/video') }}#">Video</a>
+                            <a href="{{ url('/video') }}">Video</a>
                         </li>
                         <li>
                             <a href="#">A Page</a>
@@ -40,20 +41,22 @@
                 <div class="banner">
                     <img src="{{ asset('image/banner.jpg') }}" alt="test">
                 </div>
-                <div class="section-left">
-                <h2>Welcome to the textured_orbs template</h2>
-                <p>This standards compliant, simple, fixed width website template is released as an 'open source' design (under a <a href="http://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to download and use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from HTML5webtemplates.co.uk' link in the footer of the template, but other than that...</p>
-                <p>This template is written entirely in <strong>HTML5</strong> and <strong>CSS</strong>, and can be validated using the links in the footer.</p>
-                <p>You can view more free HTML5 web templates <a href="http://www.html5webtemplates.co.uk">here</a>.</p>
-                <p>This template is a fully functional 5 page website, with an <a href="examples.html">examples</a> page that gives examples of all the styles available with this design.</p>
-                <h2>Browser Compatibility</h2>
-                <p>This template has been tested in the following browsers:</p>
-                    <ul>
-                        <li>Internet Explorer 9</li>
-                        <li>FireFox 25</li>
-                        <li>Google Chrome 31</li>
-                    </ul>
-                </div>
+            <div class="section-left">
+            <h2>Create Videos</h2>
+            <form action="#" onsubmit="return create() ">
+                    <div class="form_settings">
+                       <p>Title: <input class"name" type="text" id="title" name="name" value="" /></p>                        
+                       <p>Detail: <textarea rows="8" cols="50" id="detail" name="detail"></textarea></p>                 
+                       <p>Type Video:                       
+                       <input class="radio" type="radio" id="shortclip" name="type" value="คลิปสั้น" checked > คลิปสั้น
+                       <input class="radio" type="radio" id="longclip" name="type" value="คลิปยาว"> คลิปยาว <br /><br />                                              
+                       <input type="submit" value="Save" >
+                       <input type="reset" value="Cancel" />
+                       </p>
+                    </div>       
+                </div>                            
+             </form>   
+            
                 <div class="section-right">
                     <div class="box-top">
                         <h4>Latest News</h4>
@@ -86,7 +89,7 @@
                     <p class="footer-text">
                         <a href="{{ url('/home') }}">Home</a>
                         |
-                        <a href="{{ url('/video') }}">Video</a>
+                        <a href="{{ url('/video') }}#">Video</a>
                         |
                         <a href="#">A Page</a>
                         |
@@ -103,6 +106,23 @@
                         <a href="#">design from HTML5webtemplates.co.uk</a>
                     </p>
                 </div>
-            </footer>        
+            </footer>
+
+             <script>
+             function create() {                    
+                var title = document.getElementById("title").value;
+                var detail = document.getElementById("detail").value;
+                var type = document.getElementsByName("type");
+                var type_text = ''
+                for (var i = 0, length = type.length; i < length; i++) {
+                    if (type[i].checked) {
+                        type_text = type[i].value;
+                        break;
+                    }
+                }
+                alert("Title : " + title + "\nDetail : " + detail + "\nType video : " + type_text  );                
+             }                
+               
+             </script>         
     </body>
 </html>

@@ -3,6 +3,10 @@ body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+#spoiler {
+  display: none;
+}
+
 h1,
 h2,
 h4,
@@ -130,6 +134,14 @@ h6 {
   padding: 0 0 0 20px;
 }
 
+.section-left #table {
+  text-align: center;
+}
+
+.section-left .middle {
+  margin-top: 220px;
+}
+
 .section-left a {
   margin-right: 0;
   color: #009FBC;
@@ -169,7 +181,7 @@ h6 {
 .section-right .box-top {
   border: solid 1px #ccc;
   border-radius: 12px;
-  padding: 12px;
+  padding: 22px;
 }
 
 .section-right .box-top p {

@@ -23,6 +23,14 @@ Route::get('video', function () {
     return view('video');
 });
 
+Route::get('createvideo', function () {
+    return view('createvideo');
+});
+
+Route::get('editvideo', function () {
+    return view('editvideo');
+});
+
 Route::get('testjs', function () {
     $videos = [
                 'v1' => 'test',
